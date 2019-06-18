@@ -1,7 +1,7 @@
 
 ![logo](https://github.com/bjanderson70/sf-cross-cutting-concerns/blob/master/imgs/logo.png)
 # sf-cross-cutting-concerns-edx
-Cross cutting concerns for apex code..
+Cross cutting concerns for apex code. Adapting to SFDX as well as extensions to accomodate new features
 
 This code designed to encapsulate common cross-cutting concerns (logging, exception handling, caching, etc.).Often times cross-cutting concerns are an after-thought; or, hastily injected without any ability to manage or control.This project was to encapsulate those concerns and provide a mechanism to change/augment. 
 Changing behaviour is a matter of inheritance and specifying choice via custom metadata. See the [Wiki](https://github.com/bjanderson70/sf-cross-cutting-concerns/wiki) for more informaiton.
