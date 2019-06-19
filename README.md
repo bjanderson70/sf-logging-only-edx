@@ -1,10 +1,9 @@
 
 ![logo](https://github.com/bjanderson70/sf-cross-cutting-concerns/blob/master/imgs/logo.png)
-# sf-cross-cutting-concerns-edx
-Cross cutting concerns for apex code. Adapting to SFDX as well as extensions to accomodate new features
+# sf-logging-only-edx
+Logging Only concerns for apex code [WIP]. Adapting to SFDX as well as extensions to accomodate new features
 
-This code designed to encapsulate common cross-cutting concerns (logging, exception handling, caching, etc.).Often times cross-cutting concerns are an after-thought; or, hastily injected without any ability to manage or control.This project was to encapsulate those concerns and provide a mechanism to change/augment. 
-Changing behaviour is a matter of inheritance and specifying choice via custom metadata. See the [Wiki](https://github.com/bjanderson70/sf-cross-cutting-concerns/wiki) for more informaiton.
+This code designed to encapsulate common logging concerns . See the [Wiki](https://github.com/bjanderson70/sf-cross-cutting-concerns/wiki) for more informaiton on logging aspects.
 
 ## Getting Started
 
@@ -13,7 +12,7 @@ See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
-You will need to have Platform Cache enable; otherwise, caching WILL NOT work.
+SFDX package
 
 ## Running the tests
 
