@@ -1,5 +1,5 @@
 
-![logo](https://github.com/bjanderson70/sf-cross-cutting-concerns/blob/master/imgs/logo.png)
+![logo](https://github.com/bjanderson70/sf-logging-only-edx/blob/master/imgs/LoggingOnly.png)
 # sf-logging-only-edx
 Logging Only concerns for apex code [WIP]. Adapting to SFDX as well as extensions to accomodate new features
 
