@@ -46,6 +46,9 @@ version 0.9.6
 ## Authors
 
 * **Bill Anderson** 
+* **Jason Stone**
+* **Chris Soutworth**
+* **Ian Szemere**
 
 ## License
 
