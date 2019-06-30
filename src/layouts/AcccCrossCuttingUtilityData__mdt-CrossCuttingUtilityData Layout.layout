@@ -16,10 +16,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>useCachingStrategy__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>triggersEnable__c</field>
             </layoutItems>
             <layoutItems>

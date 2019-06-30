@@ -48,7 +48,7 @@ private class accc_TestEnvironmentSingletonTest {
         accc_IFallbackResources fallback = env.fallbackResources();
         accc_IApexFactory factory = env.objectFactory();
         accc_IApexExceptionHandler excpHandler = env.exceptionhandler();
-        accc_ICache cache = env.cache();
+        //accc_ICache cache = env.cache();
         accc_IPreviousTransactionResult previousResult = env.transactionResult();
 
         system.assertEquals( accc_ApexTestUtilities.isProvider(provider), true);
@@ -56,7 +56,7 @@ private class accc_TestEnvironmentSingletonTest {
         system.assertEquals( accc_ApexTestUtilities.isFallback(fallback), true);
         system.assertEquals( accc_ApexTestUtilities.isFactory(factory), true);
         system.assertEquals( accc_ApexTestUtilities.isExceptionHandler(excpHandler), true);
-        system.assertEquals( accc_ApexTestUtilities.isCache(cache), true);
+       // system.assertEquals( accc_ApexTestUtilities.isCache(cache), true);
         system.assertEquals( accc_ApexTestUtilities.isPreviousTransactionResult(previousResult), true);
 
     } // end of testMethodsValidity
@@ -72,7 +72,7 @@ private class accc_TestEnvironmentSingletonTest {
         accc_IFallbackResources fallback = env.fallbackResources();
         accc_IApexFactory factory = env.objectFactory();
         accc_IApexExceptionHandler excpHandler = env.exceptionhandler();
-        accc_ICache cache = env.cache();
+       // accc_ICache cache = env.cache();
 
 
         system.assertNotEquals( accc_ApexTestUtilities.isLogger(provider), true);
@@ -80,7 +80,7 @@ private class accc_TestEnvironmentSingletonTest {
         system.assertNotEquals( accc_ApexTestUtilities.isFactory(fallback), true);
         system.assertNotEquals( accc_ApexTestUtilities.isLogger(factory), true);
         system.assertNotEquals( accc_ApexTestUtilities.isFallback(excpHandler), true);
-        system.assertNotEquals( accc_ApexTestUtilities.isFallback(cache), true);
+       // system.assertNotEquals( accc_ApexTestUtilities.isFallback(cache), true);
 
     } // end of testMethodsInValid
     //
@@ -101,14 +101,14 @@ private class accc_TestEnvironmentSingletonTest {
         accc_IApexFactory factory = env.objectFactory();
         env.exceptionhandler(null);
         accc_IApexExceptionHandler excpHandler = env.exceptionhandler();
-        accc_ICache cache = env.cache();
+       // accc_ICache cache = env.cache();
 
         system.assertEquals( accc_ApexTestUtilities.isLogger(logger), true);
         system.assertEquals( accc_ApexTestUtilities.isProvider(provider), true);
         system.assertEquals( accc_ApexTestUtilities.isFactory(factory), true);
         system.assertEquals( accc_ApexTestUtilities.isFallback(fallback), true);
         system.assertEquals( accc_ApexTestUtilities.isExceptionHandler(excpHandler), true);
-        system.assertEquals( accc_ApexTestUtilities.isCache(cache), true);
+        //system.assertEquals( accc_ApexTestUtilities.isCache(cache), true);
 
     } // end of testSetMethodsAreValid
 

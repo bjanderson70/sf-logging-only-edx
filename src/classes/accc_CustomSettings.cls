@@ -47,7 +47,7 @@ public without sharing class accc_CustomSettings implements accc_IConfigurationP
   // keep the known settings
   static Map<String, Object> knownSettings = new Map<String, Object>();
   // data caching model
-  static accc_DataCachingDataModel dataCachingModel = null;
+  //static accc_DataCachingDataModel dataCachingModel = null;
   // cross-cutting configuration model
   static accc_CrossCuttingConfigDataModel ccConfigModel = null;
   // cross-cutting utility information
@@ -109,29 +109,29 @@ public without sharing class accc_CustomSettings implements accc_IConfigurationP
     * @param String label
     * @return accc_DataCachingDataModel.CacheInformation
     */
-  public static boolean caching (String label) {
-    Boolean result = false;
-    accc_ApexCacheMgr mgr = new accc_ApexCacheMgr();
-    accc_DataCachingDataModel.CacheInformation datum = mgr.cacheInformation(label);
-    if ( datum != null ) {
-      result = datum.isCachingEnabled;
-    }
-    return result;
-  } // end of caching
+  //public static boolean caching (String label) {
+  //  Boolean result = false;
+  //  accc_ApexCacheMgr mgr = new accc_ApexCacheMgr();
+  //  accc_DataCachingDataModel.CacheInformation datum = mgr.cacheInformation(label);
+  //  if ( datum != null ) {
+  //    result = datum.isCachingEnabled;
+  //  }
+  //  return result;
+  //} // end of caching
   /**
   * @description determine if we are using caching strategy
   * @return true, if using caching strategy
   */
-  public static boolean useCachingStrategy() {
-    boolean result = true;
+  //public static boolean useCachingStrategy() {
+  //  boolean result = true;
 
-    accc_CrossCuttingUtilityDataModel.CrossCuttingUtilityInformation info = accc_CustomSettings.crossCuttingInformation();
-    if ( info != null ) {
-      result = (boolean)info.useCachingStrategy;
-    }
+  //  accc_CrossCuttingUtilityDataModel.CrossCuttingUtilityInformation info = accc_CustomSettings.crossCuttingInformation();
+  //  if ( info != null ) {
+  //    result = (boolean)info.useCachingStrategy;
+  //  }
 
-    return result;
-  } // end of useCachingStrategy
+  //  return result;
+  //} // end of useCachingStrategy
 
   /**
   * @description  using soft asserts for testing
@@ -256,13 +256,13 @@ public without sharing class accc_CustomSettings implements accc_IConfigurationP
    * @description get the data caching model
    * @return accc_DataCachingDataModel, data caching model
    */
-  public static accc_DataCachingDataModel cachingModel() {
-    // local copy available
-    if ( accc_CustomSettings.dataCachingModel == null) {
-      accc_CustomSettings.dataCachingModel = new accc_DataCachingDataModel();
-    }
-    return accc_CustomSettings.dataCachingModel;
-  } // end of cachingModel
+  //public static accc_DataCachingDataModel cachingModel() {
+  //  // local copy available
+  //  if ( accc_CustomSettings.dataCachingModel == null) {
+  //    accc_CustomSettings.dataCachingModel = new accc_DataCachingDataModel();
+  //  }
+  //  return accc_CustomSettings.dataCachingModel;
+  //} // end of cachingModel
 
 
   /**
@@ -300,8 +300,8 @@ public without sharing class accc_CustomSettings implements accc_IConfigurationP
   static Map<String, Object> getKnownResourceSettings() {
     // seed the known resources with values using what we know; like an annoymous delegate or lambda expression.
     if ( accc_CustomSettings.knownSettings.size() == 0 ) {
-      accc_CustomSettings.knownSettings.put(accc_ApexConstants.UseCachingStrategy_r,
-                                            accc_CustomSettings.useCachingStrategy());
+      //accc_CustomSettings.knownSettings.put(accc_ApexConstants.UseCachingStrategy_r,
+      //                                      accc_CustomSettings.useCachingStrategy());
       accc_CustomSettings.knownSettings.put(accc_ApexConstants.TriggersEnabled_r,
                                             accc_CustomSettings.triggersEnable());
       accc_CustomSettings.knownSettings.put(accc_ApexConstants.MaxChunkSize_r,
@@ -312,8 +312,8 @@ public without sharing class accc_CustomSettings implements accc_IConfigurationP
                                             accc_CustomSettings.environmentClass());
       accc_CustomSettings.knownSettings.put(accc_ApexConstants.CrossCuttingUtility_r,
                                             accc_CustomSettings.crossCuttingInformation());
-      accc_CustomSettings.knownSettings.put(accc_ApexConstants.DataCachingConfiguration_r,
-                                            accc_CustomSettings.cachingModel());
+      //accc_CustomSettings.knownSettings.put(accc_ApexConstants.DataCachingConfiguration_r,
+      //                                      accc_CustomSettings.cachingModel());
       accc_CustomSettings.knownSettings.put(accc_ApexConstants.CrossCuttingConfiguration_r,
                                             accc_CustomSettings.crossCuttingConfigModel());
       accc_CustomSettings.knownSettings.put(accc_ApexConstants.TraceFlagOn_r,

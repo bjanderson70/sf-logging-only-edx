@@ -66,9 +66,9 @@ public virtual class accc_VirtualCustomSettings implements accc_IConfigurationPr
     * @param string identifier/label
     * @return true, if caching is enabled for this  identifier/label
     */
-    public virtual  boolean caching (String label) {
-        return accc_CustomSettings.caching(label);
-    } // end of caching
+    //public virtual  boolean caching (String label) {
+    //    return accc_CustomSettings.caching(label);
+    //} // end of caching
     /**
      * @description triggers enable
      * @return boolean, true if triggers are enable
@@ -102,9 +102,9 @@ public virtual class accc_VirtualCustomSettings implements accc_IConfigurationPr
      * @description determine if we are using caching strategy
      * @return true, if using caching strategy
      */
-    public virtual boolean useCachingStrategy() {
-        return accc_CustomSettings.useCachingStrategy();
-    } // end of useCachingStrategy
+    //public virtual boolean useCachingStrategy() {
+    //    return accc_CustomSettings.useCachingStrategy();
+    //} // end of useCachingStrategy
     /**
     * @description get the environment class
     * @return class name of the environment
@@ -124,9 +124,9 @@ public virtual class accc_VirtualCustomSettings implements accc_IConfigurationPr
      * @description get the data caching model
      * @return accc_DataCachingDataModel, data caching model
      */
-    public virtual accc_DataCachingDataModel cachingModel() {
-        return accc_CustomSettings.cachingModel();
-    } // end of cachingModel
+    //public virtual accc_DataCachingDataModel cachingModel() {
+    //    return accc_CustomSettings.cachingModel();
+    //} // end of cachingModel
 
     /**
      * @description get the cross-cutting configuration class

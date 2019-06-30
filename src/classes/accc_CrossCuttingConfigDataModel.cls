@@ -58,10 +58,7 @@ public without sharing class accc_CrossCuttingConfigDataModel extends accc_BaseM
     // Step 1a. Added field name here, ie. 'LogFormatter__c'
     @TestVisible
     static private final List<String> FieldList = new List<String> {
-        'CacheResource__c'
-        , 'ConfigurationResource__c'
-        , 'CacheStrategyInvocation__c'
-        , 'CacheStrategy__c'
+        'ConfigurationResource__c'
         , 'ExceptionHandler__c'
         , 'ExceptionFormatter__c'
         , 'ExceptionPolicyHandler__c'
@@ -71,7 +68,6 @@ public without sharing class accc_CrossCuttingConfigDataModel extends accc_BaseM
         , 'LogFormatter__c'
         , 'PreviousTransactionResultResource__c'
         , 'RuntimeEnvironment__c'
-        , 'SendEmailChannel__c'
 
     };
     /////////////////////////////////////////////////////////////////////////////////////////
@@ -88,18 +84,17 @@ public without sharing class accc_CrossCuttingConfigDataModel extends accc_BaseM
      */
     public class CrossCuttingConfigInformation extends accc_BaseMdtDataModel.BaseDataModelInformation {
 
-        public string cacheClass;
+
         public String exceptionHandlerClass;
         public String fallbackResourcesClass;
         public String loggingClass;
         public String logFormatterClass;
-        public String cacheStrategyClass;
-        public String cacheStrategyInvocationClass;
+
         public String configurationClass;
         public String exceptionFormatterClass;
         public String exceptionPolicyHandlerClass;
         public String previousTransactionResultResourceClass;
-        public String sendEmailChannelClass;
+
         public String runtimeEnvironmentClass;
         public String factoryClass;
 
@@ -121,8 +116,7 @@ public without sharing class accc_CrossCuttingConfigDataModel extends accc_BaseM
     /**
      * @description populate our external view of the data cache structure
      *
-     * @param cacheMDT the data cache Metadata
-     * @param the map of data
+     * @param data the collection of Metadata
      * @return our view of the data ( allows us to change internally)
      */
     @TestVisible
@@ -143,9 +137,6 @@ public without sharing class accc_CrossCuttingConfigDataModel extends accc_BaseM
                  *                               Step 4: Ensure Fallback Resources have the Resource Name (see accc_ApexConstants and accc_ApexKnownCCConcernsFallback)
                  **/
 
-                result.cacheClass = accc_Apexutilities.normalizeString(cmdt.CacheResource__c, true);
-                result.cacheStrategyInvocationClass = accc_Apexutilities.normalizeString(cmdt.CacheStrategyInvocation__c, true);
-                result.cacheStrategyClass = accc_Apexutilities.normalizeString(cmdt.CacheStrategy__c, true);
                 result.configurationClass = accc_Apexutilities.normalizeString(cmdt.ConfigurationResource__c, true);
                 result.exceptionFormatterClass = accc_Apexutilities.normalizeString(cmdt.ExceptionFormatter__c, true);
                 result.exceptionPolicyHandlerClass = accc_Apexutilities.normalizeString(cmdt.ExceptionPolicyHandler__c, true);
@@ -155,7 +146,6 @@ public without sharing class accc_CrossCuttingConfigDataModel extends accc_BaseM
                 result.loggingClass = accc_Apexutilities.normalizeString(cmdt.Logger__c, true);
                 result.logFormatterClass = accc_Apexutilities.normalizeString(cmdt.LogFormatter__c, true);
                 result.previousTransactionResultResourceClass = accc_Apexutilities.normalizeString(cmdt.PreviousTransactionResultResource__c, true);
-                result.sendEmailChannelClass = accc_Apexutilities.normalizeString(cmdt.SendEmailChannel__c, true);
                 result.runtimeEnvironmentClass = accc_Apexutilities.normalizeString(cmdt.RuntimeEnvironment__c, true);
 
                 results.add(result);

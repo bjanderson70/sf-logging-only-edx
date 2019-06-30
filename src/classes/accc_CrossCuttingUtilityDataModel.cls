@@ -71,7 +71,6 @@ public without sharing class accc_CrossCuttingUtilityDataModel extends accc_Base
         , 'maxNumberOfItemsInChunks__c'
         , 'softAssert__c'
         , 'triggersEnable__c'
-        , 'useCachingStrategy__c'
         , 'logLevelForTrace__c'
         , 'traceFlagOn__c'
         , 'showCCInfo__c'
@@ -155,7 +154,6 @@ public without sharing class accc_CrossCuttingUtilityDataModel extends accc_Base
                 result.environmentClass = accc_Apexutilities.normalizeString(cmdt.environmentClass__c, true);
                 result.maxNumberOfItemsInChunks = (Integer)cmdt.maxNumberOfItemsInChunks__c;
                 result.triggersAreEnable = cmdt.triggersEnable__c;
-                result.useCachingStrategy = cmdt.UseCachingStrategy__c;
                 result.showCrossCuttingConcernsInfo = cmdt.showCCInfo__c;
                 result.loglevel = accc_CrossCuttingUtilityDataModel.convertCustomMDTVStringToLogLvl(cmdt.logLevelForTrace__c);
                 result.traceFlagOn = cmdt.traceFlagOn__c;

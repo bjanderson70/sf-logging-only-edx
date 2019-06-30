@@ -30,8 +30,4 @@
         <field>triggersEnable__c</field>
         <value xsi:type="xsd:boolean">true</value>
     </values>
-    <values>
-        <field>useCachingStrategy__c</field>
-        <value xsi:type="xsd:boolean">true</value>
-    </values>
 </CustomMetadata>

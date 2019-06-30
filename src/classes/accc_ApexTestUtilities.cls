@@ -31,6 +31,10 @@
  *
  * @author Bill Anderson
  * @description Use for common test for accc_ApexUtilities
+ *
+ *
+ *  NOTE: This is an abbreviate version: Cahcing, Cache Strategy and Messaging were removed
+ *
  * @group Common Test Layer
  */
 @isTest
@@ -130,21 +134,6 @@ public without sharing class accc_ApexTestUtilities extends accc_ApexUtilities {
     } // end of isExceptionHandler
 
     //
-    // is a cache handler
-    //
-    public static Boolean isCache(Object obj) {
-        try {
-            accc_ICache  handler = (accc_ICache)obj;
-
-            if ( handler != null ) {
-                return true;
-            }
-        } catch (Exception excp) {}
-
-        return false;
-    } // end of isCache
-
-    //
     // is a isPreviousTransactionResult handler
     //
     public static Boolean isPreviousTransactionResult(Object obj) {
@@ -158,51 +147,6 @@ public without sharing class accc_ApexTestUtilities extends accc_ApexUtilities {
 
         return false;
     } // end of isPreviousTransactionResult
-
-    //
-    // is a isCachePolicyStrategy handler
-    //
-    public static Boolean isCachePolicyStrategy(Object obj) {
-        try {
-            accc_IApexCachePolicyStrategy handler = (accc_IApexCachePolicyStrategy)obj;
-
-            if ( handler != null ) {
-                return true;
-            }
-        } catch (Exception excp) {}
-
-        return false;
-    } // end of isCachePolicyStrategy
-
-    //
-    // is a isCacheStrategyInvocation handler
-    //
-    public static Boolean isCacheStrategyInvocation(Object obj) {
-        try {
-            accc_IApexCacheStrategyInvocation handler = (accc_IApexCacheStrategyInvocation)obj;
-
-            if ( handler != null ) {
-                return true;
-            }
-        } catch (Exception excp) {}
-
-        return false;
-    } // end of isCacheStrategyInvocation
-
-    //
-    // is a isMessageSender handler
-    //
-    public static Boolean isMessageSender(Object obj) {
-        try {
-            accc_IApexMessageSender handler = (accc_IApexMessageSender)obj;
-
-            if ( handler != null ) {
-                return true;
-            }
-        } catch (Exception excp) {}
-
-        return false;
-    } // end of isMessageSender
 
 
 } // end of accc_ApexTestUtilities

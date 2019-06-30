@@ -353,9 +353,6 @@ public virtual without sharing  class accc_CrossCuttingConfigMgr {
 
         // Step 7. Assign retrieved resource to our cross-cutting (known) references
 
-        items.put(accc_ApexConstants.CacheResource, cinfo.cacheClass);
-        items.put(accc_ApexConstants.CacheStrategy, cinfo.cacheStrategyClass);
-        items.put(accc_ApexConstants.CacheStrategyInvocation, cinfo.cacheStrategyInvocationClass);
         items.put(accc_ApexConstants.ExceptionHandler, cinfo.exceptionHandlerClass);
         items.put(accc_ApexConstants.ExceptionFormatter, cinfo.exceptionFormatterClass);
         items.put(accc_ApexConstants.ExceptionPolicyHandler, cinfo.exceptionPolicyHandlerClass);
@@ -365,7 +362,6 @@ public virtual without sharing  class accc_CrossCuttingConfigMgr {
         items.put(accc_ApexConstants.LogFormatter, cinfo.logFormatterClass);
         items.put(accc_ApexConstants.PreviousTransactionResultResource, cinfo.previousTransactionResultResourceClass);
         items.put(accc_ApexConstants.RuntimeEnvironment, cinfo.runtimeEnvironmentClass);
-        items.put(accc_ApexConstants.SendEmailChannel, cinfo.sendEmailChannelClass);
         items.put(accc_ApexConstants.ConfigurationResource, cinfo.configurationClass);
 
         return items;

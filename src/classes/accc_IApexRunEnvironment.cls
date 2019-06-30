@@ -78,7 +78,7 @@ public virtual interface accc_IApexRunEnvironment {
      * @description for caching information
      * @return accc_ICache
      */
-    accc_ICache cache();
+    //accc_ICache cache();
 
     /**
      * @description previous transaciton result
@@ -90,18 +90,18 @@ public virtual interface accc_IApexRunEnvironment {
      * @description cache strategy policy
      * @return accc_IApexCachePolicyStrategy the caching policy strategy
      */
-     accc_IApexCachePolicyStrategy cachePolicyStrategy();
+    // accc_IApexCachePolicyStrategy cachePolicyStrategy();
     /**
      * @description cache strategy invocation
      * @return accc_IApexCacheStrategyInvocation the caching strategy
      */
-    accc_IApexCacheStrategyInvocation cacheStrategyInvocation();
+    //accc_IApexCacheStrategyInvocation cacheStrategyInvocation();
        
     /**
      * @description send messages
      * @return accc_IApexMessageSender
      */
-    accc_IApexMessageSender messageSender();
+    //accc_IApexMessageSender messageSender();
 
     ////////////////////////////////////////////////////////////////////////
     //
@@ -146,7 +146,7 @@ public virtual interface accc_IApexRunEnvironment {
      * 
      * @param transacitonResult ICache
      */
-    void cache(accc_ICache runTimeCache);
+    //void cache(accc_ICache runTimeCache);
 
     /**
      * @description set previous transaciton result
@@ -160,17 +160,17 @@ public virtual interface accc_IApexRunEnvironment {
     *
     * @param accc_IApexCacheStrategyInvocation cache strategy
     */
-    void cacheStrategyInvocation(accc_IApexCacheStrategyInvocation cacheStrategyInvo);
+    //void cacheStrategyInvocation(accc_IApexCacheStrategyInvocation cacheStrategyInvo);
  
     /**
     * @description set the cache strategy polict
     *
     * @param accc_IApexCachePolicyStrategy cache policy
     */
-    void cachePolicyStrategy(accc_IApexCachePolicyStrategy theCachePolicyStrategy);
+    //void cachePolicyStrategy(accc_IApexCachePolicyStrategy theCachePolicyStrategy);
     /**
      * @description set the message sender
      * @param accc_IApexMessageSender set message channel
      */
-    void messageSender(accc_IApexMessageSender theMessageSender) ;
+    //void messageSender(accc_IApexMessageSender theMessageSender) ;
 } // end of accc_IApexRunEnvironment

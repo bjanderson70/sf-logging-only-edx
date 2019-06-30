@@ -3,7 +3,6 @@
 	<types>
 		<members>accc_Apex_Code_Configuration__mdt</members>
 		<members>AcccApplicationLog__c</members>
-		<members>AcccDataCachingDataModel__mdt</members>
 		<members>AcccCrossCuttingUtilityData__mdt</members>
 		<members>accc_Log__e</members>
 		<name>CustomObject</name>
@@ -15,10 +14,6 @@
 		<members>AcccCrossCuttingUtilityData.debug</members>
 		<members>AcccCrossCuttingUtilityData.test</members>
 		<members>AcccCrossCuttingUtilityData.production</members>
-		<members>AcccDataCachingDataModel.opportunity_approval</members>
-		<members>AcccDataCachingDataModel.opportunity_approval_final</members>
-		<members>AcccDataCachingDataModel.testName</members>
-		<members>AcccDataCachingDataModel.production</members>
 		<name>CustomMetadata</name>
 	</types>
 	<types>	
@@ -26,18 +21,8 @@
 		<members>accc_ApexApplicationExceptionTest</members>
 		<members>accc_ApexBaseFallback</members>
 		<members>accc_ApexBaseFallbackTest</members>
-		<members>accc_ApexBaseMessageSender</members>
-		<members>accc_ApexBaseMessageSenderTest</members>
 		<members>accc_ApexBaseRuntimeEnvironment</members>
 		<members>accc_ApexBaseRuntimeEnvironmentTest</members>
-		<members>accc_ApexCache</members>
-		<members>accc_ApexCacheMgr</members>
-		<members>accc_ApexCacheMgrTest</members>
-		<members>accc_ApexCachePolicyStrategy</members>
-		<members>accc_ApexCachePolicyStrategyTest</members>
-		<members>accc_ApexCacheStrategyInvocation</members>
-		<members>accc_ApexCacheStrategyInvocationTest</members>
-		<members>accc_ApexCacheTest</members>
 		<members>accc_ApexClassInstanceMgr</members>
 		<members>accc_ApexClassInstanceMgrTest</members>
 		<members>accc_ApexConstants</members>
@@ -94,12 +79,8 @@
 		<members>accc_CrossCuttingUtilityDataModelTest</members>
 		<members>accc_CustomSettings</members>
 		<members>accc_CustomSettingsTest</members>
-		<members>accc_DataCachingDataModel</members>
-		<members>accc_DataCachingDataModelTest</members>
 		<members>accc_ExceptionFormatter</members>
 		<members>accc_ExceptionFormatterTest</members>
-		<members>accc_IApexCachePolicyStrategy</members>
-		<members>accc_IApexCacheStrategyInvocation</members>
 		<members>accc_IApexExceptionHandler</members>
 		<members>accc_IApexExceptionPolicyStrategy</members>
 		<members>accc_IApexFactory</members>
@@ -107,7 +88,6 @@
 		<members>accc_IApexObjectGetter</members>
 		<members>accc_IApexPlatformEventHandler</members>
 		<members>accc_IApexRunEnvironment</members>
-		<members>accc_ICache</members>
 		<members>accc_IConfigurationProvider</members>
 		<members>accc_IDataFormat</members>
 		<members>accc_IFallbackResources</members>
@@ -123,8 +103,6 @@
 		<members>accc_StopWatchTest</members>
 		<members>accc_TestEnvironmentSingleton</members>
 		<members>accc_TestEnvironmentSingletonTest</members>
-		<members>accc_TestInvokerApexCacheStrategy</members>
-		<members>accc_TestInvokerApexCacheStrategyTest</members>
 		<members>accc_TestUtility</members>
 		<members>accc_TriggerHelperClass</members>
 		<members>accc_TriggerHelperClassTest</members>
@@ -150,9 +128,52 @@
 	<types>
 		<members>accc_Apex_Code_Configuration__mdt-Apex Code Configuration Layout</members>
 		<members>AcccCrossCuttingUtilityData__mdt-CrossCuttingUtilityData Layout</members>
-		<members>AcccDataCachingDataModel__mdt-DataCaching Layout</members>
 		<members>AcccApplicationLog__c-Accc Application Log Layout</members>
 		<name>Layout</name>
 	</types>
-    <version>41.0</version>
+	 <types>
+            <members>accc_ApexApplicationExceptionTest</members>
+			<members>accc_ApexBaseFallbackTest</members>
+			<members>accc_ApexBaseRuntimeEnvironmentTest</members>
+			<members>accc_ApexClassInstanceMgrTest</members>
+			<members>accc_ApexEnvironmentTest</members>
+			<members>accc_ApexExceptionHandlerTest</members>
+			<members>accc_ApexExceptionPolicyStrategyTest</members>
+			<members>accc_ApexKnownCCConcernsFallbackTest</members>
+			<members>accc_ApexLocalL1CacheTest</members>
+			<members>accc_ApexLogDataModelTest</members>
+			<members>accc_ApexLogFormatterTest</members>
+			<members>accc_ApexLoggerTest</members>
+			<members>accc_ApexNoOpLoggerTest</members>
+			<members>accc_ApexObjectFactoryTest</members>
+			<members>accc_ApexObjectLoggerTest</members>
+			<members>accc_ApexPerformanceMetricsTest</members>
+			<members>accc_ApexPlatformEventDispatcherTest</members>
+			<members>accc_ApexPreviousTransactionResultTest</members>
+			<members>accc_ApexPublishEventLoggerTest</members>
+			<members>accc_ApexTestJSONDataFallbackTest</members>
+			<members>accc_ApexTestUtilities</members>
+			<members>accc_ApexUtilitiesTest</members>
+			<members>accc_ApplicationLogTest</members>
+			<members>accc_BaseMdtDataModelTest</members>
+			<members>accc_CrossCuttingConfigDataModelTest</members>
+			<members>accc_CrossCuttingConfigMgrTest</members>
+			<members>accc_CrossCuttingUtilityDataModelTest</members>
+			<members>accc_CustomSettingsTest</members>
+			<members>accc_ExceptionFormatterTest</members>
+			<members>accc_GenericDbResultHandlerTest</members>
+			<members>accc_LogPlatformEventHandlerTest</members>
+			<members>accc_MessageTransformationTest</members>
+			<members>accc_NameValuePairTest</members>
+			<members>accc_QueableSObjectsTest</members>
+			<members>accc_SObjectBaseWriterTest</members>
+			<members>accc_StopWatchTest</members>
+			<members>accc_SyncAsyncWriterTest</members>
+			<members>accc_TestEnvironmentSingletonTest</members>
+			<members>accc_TestUtility</members>
+			<members>accc_TriggerHelperClassTest</members>
+			<members>accc_VirtualCustomSettingsTest</members>
+        <name>ApexTestSuite</name>
+    </types>
+    <version>46.0</version>
 </Package>

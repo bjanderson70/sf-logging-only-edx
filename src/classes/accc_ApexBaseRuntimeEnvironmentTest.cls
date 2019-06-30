@@ -32,6 +32,9 @@
  *
  * @author Bill Anderson
  * @description Test the apex base runtime environment
+ *
+ *  NOTE: This is an abbreviate version: Cahcing, Cache Strategy and Messaging were removed
+ *
  * @group Common Test Layer
  */
 @isTest
@@ -49,11 +52,7 @@ private class accc_ApexBaseRuntimeEnvironmentTest {
         accc_IFallbackResources fallback = env.fallbackResources();
         accc_IApexFactory factory = env.objectFactory();
         accc_IApexExceptionHandler excpHandler = env.exceptionhandler();
-        accc_ICache cache = env.cache();
         accc_IPreviousTransactionResult trResult = env.transactionResult();
-        accc_IApexCachePolicyStrategy cachePolicyStrategy = env.cachePolicyStrategy();
-        accc_IApexCacheStrategyInvocation cacheStrategyInvocation = env.cacheStrategyInvocation();
-        accc_IApexMessageSender messageSender = env.messageSender();
 
 
         system.assertEquals(accc_ApexTestUtilities.isProvider(provider), true);
@@ -61,12 +60,7 @@ private class accc_ApexBaseRuntimeEnvironmentTest {
         system.assertEquals(accc_ApexTestUtilities.isFallback(fallback), true);
         system.assertEquals(accc_ApexTestUtilities.isExceptionHandler(excpHandler), true);
         system.assertEquals(accc_ApexTestUtilities.isFactory(factory), true);
-        system.assertEquals(accc_ApexTestUtilities.isCache(cache), true);
         system.assertEquals(accc_ApexTestUtilities.isPreviousTransactionResult(trResult),  true);
-
-        system.assertEquals(accc_ApexTestUtilities.isCachePolicyStrategy(cachePolicyStrategy),  true);
-        system.assertEquals(accc_ApexTestUtilities.isCacheStrategyInvocation(cacheStrategyInvocation), true);
-        system.assertEquals(accc_ApexTestUtilities.isMessageSender(messageSender),  true);
 
     } // end of testMethodsValidity
 
@@ -78,23 +72,14 @@ private class accc_ApexBaseRuntimeEnvironmentTest {
         accc_IFallbackResources fallback = env.fallbackResources();
         accc_IApexFactory factory = env.objectFactory();
         accc_IApexExceptionHandler excpHandler = env.exceptionhandler();
-        accc_ICache cache = env.cache();
         accc_IPreviousTransactionResult trResult = env.transactionResult();
-        accc_IApexCachePolicyStrategy cachePolicyStrategy = env.cachePolicyStrategy();
-        accc_IApexCacheStrategyInvocation cacheStrategyInvocation = env.cacheStrategyInvocation();
-        accc_IApexMessageSender messageSender = env.messageSender();
 
         system.assertNotEquals(accc_ApexTestUtilities.isLogger(provider), true);
         system.assertNotEquals(accc_ApexTestUtilities.isProvider(logger), true);
         system.assertNotEquals(accc_ApexTestUtilities.isFactory(fallback), true);
         system.assertNotEquals(accc_ApexTestUtilities.isExceptionHandler(factory), true);
         system.assertNotEquals(accc_ApexTestUtilities.isFallback(excpHandler), true);
-        system.assertNotEquals(accc_ApexTestUtilities.isFallback(cache), true);
         system.assertNotEquals(accc_ApexTestUtilities.isProvider(trResult), true);
-
-        system.assertNotEquals(accc_ApexTestUtilities.isCachePolicyStrategy(cacheStrategyInvocation), true);
-        system.assertNotEquals(accc_ApexTestUtilities.isCacheStrategyInvocation(messageSender), true);
-        system.assertNotEquals(accc_ApexTestUtilities.isMessageSender(cachePolicyStrategy), true);
 
     } // end of testMethodsInValid
 
@@ -113,16 +98,8 @@ private class accc_ApexBaseRuntimeEnvironmentTest {
         accc_IApexFactory factory = env.objectFactory();
         env.exceptionhandler(null);
         accc_IApexExceptionHandler excpHandler = env.exceptionhandler();
-        env.cache(null);
-        accc_ICache cache = env.cache();
         env.transactionResult(null);
         accc_IPreviousTransactionResult trResult = env.transactionResult();
-        env.cachePolicyStrategy(null);
-        accc_IApexCachePolicyStrategy cachePolicyStrategy = env.cachePolicyStrategy();
-        env.cacheStrategyInvocation(null);
-        accc_IApexCacheStrategyInvocation cacheStrategyInvocation = env.cacheStrategyInvocation();
-        env.messageSender(null);
-        accc_IApexMessageSender messageSender = env.messageSender();
 
 
         system.assertNotEquals(accc_ApexTestUtilities.isLogger(provider), true);
@@ -130,12 +107,7 @@ private class accc_ApexBaseRuntimeEnvironmentTest {
         system.assertNotEquals(accc_ApexTestUtilities.isFactory(fallback), true);
         system.assertNotEquals(accc_ApexTestUtilities.isLogger(factory), true);
         system.assertNotEquals(accc_ApexTestUtilities.isProvider(excpHandler), true);
-        system.assertNotEquals(accc_ApexTestUtilities.isFactory(cache), true);
         system.assertNotEquals(accc_ApexTestUtilities.isLogger(trResult), true);
-
-        system.assertNotEquals(accc_ApexTestUtilities.isCachePolicyStrategy(cacheStrategyInvocation), true);
-        system.assertNotEquals(accc_ApexTestUtilities.isCacheStrategyInvocation(messageSender), true);
-        system.assertNotEquals(accc_ApexTestUtilities.isMessageSender(cachePolicyStrategy), true);
 
     } // end of testSetMethodsAreValid
 
@@ -148,11 +120,8 @@ private class accc_ApexBaseRuntimeEnvironmentTest {
             'accc_IApexExceptionHandler' => env.exceptionHandler(),
             'accc_IConfigurationProvider' => env.provider(),
             'accc_ILogger' => env.logger(),
-            'accc_ICache' => env.cache(),
-            'accc_IApexCachePolicyStrategy' => env.cachePolicyStrategy(),
-            'accc_IApexCacheStrategyInvocation' => env.cacheStrategyInvocation(),
-            'accc_IPreviousTransactionResult' => env.transactionResult(),
-            'accc_IApexMessageSender' => env.messageSender()
+            'accc_IPreviousTransactionResult' => env.transactionResult()
+
         };
         for ( String key : getters.keyset()) {
             System.assertNotEquals(null, getters.get(key), ' Error :' + key + ' was NULL');
@@ -168,11 +137,8 @@ private class accc_ApexBaseRuntimeEnvironmentTest {
             'accc_IApexExceptionHandler' => env.theExceptionHandler,
             'accc_IConfigurationProvider' => env.theProvider,
             'accc_ILogger' => env.theLogger,
-            'accc_ICache' => env.theCache,
-            'accc_IApexCachePolicyStrategy' => env.theCachePolicyStrategy,
-            'accc_IApexCacheStrategyInvocation' => env.theCacheStrategyInvocation,
-            'accc_IPreviousTransactionResult' => env.thePreviousTransactionResult,
-            'accc_IApexMessageSender' => env.theMessageSender
+            'accc_IPreviousTransactionResult' => env.thePreviousTransactionResult
+
         };
         for ( String key : getters.keyset()) {
             System.assertEquals(null, getters.get(key), ' Error :' + key + ' is NOT NULL');
@@ -186,7 +152,7 @@ private class accc_ApexBaseRuntimeEnvironmentTest {
     // Get the environment we are testing
     //
     private static accc_IApexRunEnvironment getTheEnvironment() {
-      
+
         if ( accc_ApexBaseRuntimeEnvironmentTest.theEnvironment == null ) {
             // need to ensure the ApexTestFactory is used as it includes
             // resources not found in the ApexFactory which is used in 'accc_ApexBaseRuntimeEnvironment'

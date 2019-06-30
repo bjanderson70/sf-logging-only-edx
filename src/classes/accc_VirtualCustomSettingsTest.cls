@@ -52,18 +52,18 @@ private class accc_VirtualCustomSettingsTest {
             return name;
         } // end of get
 
-        public override  boolean caching (String label) {
-            return !string.isBlank(label);
-        } // end of caching
+        //public override  boolean caching (String label) {
+        //    return !string.isBlank(label);
+        //} // end of caching
 
         public override boolean triggersEnable() {
             return false;
         } // end of triggersEnable
 
 
-        public override boolean useCachingStrategy() {
-            return false;
-        } // end of useCachingStrategy
+        //public override boolean useCachingStrategy() {
+        //    return false;
+        //} // end of useCachingStrategy
 
         public override String environmentClass() {
             return TestNameForEnvClass;
@@ -100,8 +100,8 @@ private class accc_VirtualCustomSettingsTest {
         // in the MDT, then some of these tests will FAIL.
         //
         Map<String, Object> knowns = new Map<String, Object> {
-            accc_ApexConstants.UseCachingStrategy_r => true
-            , accc_ApexConstants.TriggersEnabled_r => true
+            
+             accc_ApexConstants.TriggersEnabled_r => true
             , accc_ApexConstants.MaxChunkSize_r => accc_ApexConstants.DEFAULT_MAX_NUMBER_OF_ITEMS_IN_CHUNK
             , accc_ApexConstants.SoftAsserts_r => false
             , accc_ApexConstants.EnvironmentClass_r => TestNameForEnvClass
@@ -123,9 +123,9 @@ private class accc_VirtualCustomSettingsTest {
         final string key = '!hello!';
         accc_VirtualCustomSettings settings = new accc_VirtualCustomSettings();
         // act / assert
-        system.assertEquals(false, settings.caching(key));
+        
         system.assertEquals(true, settings.triggersEnable());
-        system.assertEquals(true, settings.useCachingStrategy());
+       
         system.assertEquals(TestNameForEnvClass, settings.environmentClass());
         system.assertEquals(accc_ApexConstants.DEFAULT_MAX_NUMBER_OF_ITEMS_IN_CHUNK,  settings.defaultMaxNumberOfItemsInChunks());
 
@@ -141,9 +141,9 @@ private class accc_VirtualCustomSettingsTest {
         accc_VirtualCustomSettings settings = new testCustomSettings();
         // act / assert
         system.assertEquals(expected, settings.get(expected));
-        system.assertEquals(true, settings.caching(expected));
+         
         system.assertEquals(false, settings.triggersEnable());
-        system.assertEquals(false, settings.useCachingStrategy());
+       
         system.assertEquals(TestNameForEnvClass, settings.environmentClass());
         system.assertEquals(MyMaxChunkSize,  settings.defaultMaxNumberOfItemsInChunks());
     } // end of testClassOverrides
@@ -153,7 +153,7 @@ private class accc_VirtualCustomSettingsTest {
         // assign
         accc_VirtualCustomSettings settings = new testCustomSettings();
         // act / assert
-        system.assertNotEquals(null, settings.cachingModel());
+         
         system.assertNotEquals(null, settings.crossCuttingConfigModel());
         system.assertNotEquals(null, settings.crossCuttingUtilityModel());
 

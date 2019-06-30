@@ -49,15 +49,11 @@ public class accc_ApexTestJSONDataFallback  extends accc_ApexBaseFallback {
             //
             '"' + accc_ApexConstants.CategoryInterface_s + '":' +
             '{' +
-            '"' + accc_ApexConstants.CacheResource + '": "accc_ICache",' +
-            '"' + accc_ApexConstants.CacheStrategy + '": "accc_IApexCachePolicyStrategy",' +
-            '"' + accc_ApexConstants.CacheStrategyInvocation + '": "accc_IApexCacheStrategyInvocation",' +
             '"' + accc_ApexConstants.ConfigurationResource + '": "accc_IConfigurationProvider",' +
             '"' + accc_ApexConstants.LoggerResource + '": "accc_ILogger",' +
             '"' + accc_ApexConstants.LogFormatter + '": "accc_IDataFormat",' +
             '"' + accc_ApexConstants.ExceptionHandler + '": "accc_IApexExceptionHandler",' +
             '"' + accc_ApexConstants.ExceptionFormatter + '": "accc_IDataFormat",' +
-            '"' + accc_ApexConstants.SendEmailChannel + '": "accc_IApexMessageSender",' +
             '"' + accc_ApexConstants.ExceptionPolicyHandler + '": "accc_IApexExceptionPolicyStrategy",' +
             '"' + accc_ApexConstants.PreviousTransactionResultResource + '": "accc_IApexPreviousTransactionResult",' +
             '"' + accc_ApexConstants.FactoryResource + '": "accc_IApexFactory",' +
@@ -70,22 +66,17 @@ public class accc_ApexTestJSONDataFallback  extends accc_ApexBaseFallback {
 
             '"' + accc_ApexConstants.CategoryConcrete_s + '":' +
             '{' +
-            '"' + accc_ApexConstants.CacheResource + '": "accc_ApexCache",' +
-            '"' + accc_ApexConstants.CacheStrategy + '": "accc_ApexCachePolicyStrategy",' +
-            '"' + accc_ApexConstants.CacheStrategyInvocation + '": "accc_ApexCacheStrategyInvocation",' +
             '"' + accc_ApexConstants.ConfigurationResource + '": "accc_VirtualCustomSettings",' +
             '"' + accc_ApexConstants.LoggerResource + '": "accc_ApexLogger",' +
             '"' + accc_ApexConstants.LogFormatter + '": "accc_ApexLogFormatter",' +
             '"' + accc_ApexConstants.ExceptionHandler + '": "accc_ApexExceptionHandler",' +
             '"' + accc_ApexConstants.ExceptionFormatter + '": "accc_ExceptionFormatter",' +
-            '"' + accc_ApexConstants.SendEmailChannel + '": "accc_ApexMailMessageSender",' +
             '"' + accc_ApexConstants.ExceptionPolicyHandler + '": "accc_ApexExceptionPolicyStrategy",' +
             '"' + accc_ApexConstants.PreviousTransactionResultResource + '": "accc_ApexPreviousTransactionResult",' +
             '"' + accc_ApexConstants.FactoryResource + '": "accc_ApexObjectFactory",' +
             '"' + accc_ApexConstants.FallbackResource + '": "accc_ApexTestJSONDataFallback",' +
             '"' + accc_ApexConstants.RuntimeEnvironment + '": "accc_ApexBaseRuntimeEnvironment"'  +
             '},' +
-            '"' + accc_ApexConstants.UseCachingStrategy_r + '": "true",' +
             '"' + accc_ApexConstants.TriggersEnabled_r + '": "true",' +
             '"' + accc_ApexConstants.TraceFlagOn_r + '": "true",' +
             '"' + accc_ApexConstants.TraceLogLevel_r + '": "debug",' +

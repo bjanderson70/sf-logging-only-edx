@@ -39,15 +39,12 @@
 private class accc_ApexKnownCCConcernsFallbackTest {
     // known resources
     static final List<String> KnownResources = new List<String> {
-        accc_ApexConstants.CacheResource
-        , accc_ApexConstants.CacheStrategy
-        , accc_ApexConstants.CacheStrategyInvocation
-        , accc_ApexConstants.ConfigurationResource
+
+         accc_ApexConstants.ConfigurationResource
         , accc_ApexConstants.LoggerResource
         , accc_ApexConstants.ExceptionHandler
         , accc_ApexConstants.ExceptionFormatter
         , accc_ApexConstants.LogFormatter
-        , accc_ApexConstants.SendEmailChannel
         , accc_ApexConstants.ExceptionPolicyHandler
         , accc_ApexConstants.PreviousTransactionResultResource
         , accc_ApexConstants.FactoryResource

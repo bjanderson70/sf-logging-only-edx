@@ -86,9 +86,6 @@ public class accc_ApexConstants {
     //
     public static final List<String> CC_AllResourceNames = new List<String> {
         ObjectFactory
-        , CacheStrategy
-        , CacheResource
-        , CacheStrategyInvocation
         , ConfigurationResource
         , ExceptionHandler
         , ExceptionFormatter
@@ -98,7 +95,6 @@ public class accc_ApexConstants {
         , LoggerResource
         , LogFormatter
         , RuntimeEnvironment
-        , SendEmailChannel
         , PreviousTransactionResultResource
     };
     /************************************************************************************
@@ -204,5 +200,5 @@ public class accc_ApexConstants {
      *
      * Current Version
      ************************************************************************************/
-     public static final String CURRENT_VERSION = '0.9.6';
+    public static final String CURRENT_VERSION = '0.9.6.1';
 } // end of accc_ApexConstants

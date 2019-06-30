@@ -46,7 +46,7 @@ private class accc_CrossCuttingConfigMgrTest {
     };
     // Known field names in custom mdt that holds the classes to be instantiated
     static final List<String> CLASSES = new List<String> {
-        accc_ApexConstants.CacheResource,
+
         accc_ApexConstants.ExceptionHandler,
         accc_ApexConstants.FallbackResource,
         accc_ApexConstants.LoggerResource
@@ -162,11 +162,11 @@ private class accc_CrossCuttingConfigMgrTest {
         // assign
         accc_CrossCuttingConfigMgr cccm = new accc_CrossCuttingConfigMgr();
         // act
-        accc_ApexClassInstanceMgr inst = cccm.getInstanceCreator('ApexClass', 'accc_ICache');
+        accc_ApexClassInstanceMgr inst = cccm.getInstanceCreator(accc_ApexConstants.LogFormatter, 'accc_IDataFormat');
         // assert
         system.assertEquals(true, inst != null );
-        system.assertEquals(true, inst.className == 'ApexClass' );
-        system.assertEquals(true, inst.classInterfaceType == 'accc_ICache' );
+        system.assertEquals(true, inst.className == accc_ApexConstants.LogFormatter );
+        system.assertEquals(true, inst.classInterfaceType == 'accc_IDataFormat' );
 
 
     } // end of testgetInstanceCreator

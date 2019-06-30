@@ -3,18 +3,6 @@
     <label>debug</label>
     <protected>false</protected>
     <values>
-        <field>CacheResource__c</field>
-        <value xsi:type="xsd:string">accc_ApexCache</value>
-    </values>
-    <values>
-        <field>CacheStrategyInvocation__c</field>
-        <value xsi:type="xsd:string">accc_TestInvokerApexCacheStrategy</value>
-    </values>
-    <values>
-        <field>CacheStrategy__c</field>
-        <value xsi:type="xsd:string">accc_ApexCachePolicyStrategy</value>
-    </values>
-    <values>
         <field>ConfigurationResource__c</field>
         <value xsi:type="xsd:string">accc_VirtualCustomSettings</value>
     </values>
@@ -53,9 +41,5 @@
     <values>
         <field>RuntimeEnvironment__c</field>
         <value xsi:type="xsd:string">accc_ApexBaseRuntimeEnvironment</value>
-    </values>
-    <values>
-        <field>SendEmailChannel__c</field>
-        <value xsi:type="xsd:string">accc_ApexMailMessageSender</value>
     </values>
 </CustomMetadata>

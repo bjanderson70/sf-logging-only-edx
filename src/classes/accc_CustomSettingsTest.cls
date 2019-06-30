@@ -75,7 +75,6 @@ private class accc_CustomSettingsTest {
         Object result = null;
         accc_IConfigurationProvider settings = new accc_CustomSettings();
         List<String> knowns = new List<String> {
-            accc_ApexConstants.UseCachingStrategy_r,
             accc_ApexConstants.TriggersEnabled_r,
             accc_ApexConstants.MaxChunkSize_r,
             accc_ApexConstants.SoftAsserts_r,
@@ -93,14 +92,7 @@ private class accc_CustomSettingsTest {
 
     } // end of testget
 
-    @isTest
-    static void testcaching() {
-        // assign / act
-        boolean result  = accc_CustomSettings.caching(accc_CrossCuttingUtilityDataModel.TestLabel2018);
-        // assert
-        system.assertEquals(true, result);
-
-    } // end of testcaching
+  
 
     @isTest
     static void testload() {

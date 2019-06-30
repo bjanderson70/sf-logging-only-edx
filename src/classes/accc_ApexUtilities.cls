@@ -31,6 +31,10 @@
  *
  * @author Bill anderson
  * @description common utilities to separate mundane task. This may be refactor to segragate category (strings, objects, etc.)
+ *
+ *
+ *  NOTE: This is an abbreviate version: Cahcing, Cache Strategy and Messaging were removed
+ *
  * @group Miscellaneous
  */
 public virtual without sharing class accc_ApexUtilities {
@@ -987,11 +991,11 @@ public virtual without sharing class accc_ApexUtilities {
 		// if we get any of these exceptions, then whatever was going
 		// on will fail due to limits exceeded -- can't catch some exceptions
 		if ( excp instanceof DmlException ||
-		      excp instanceof AsyncException ||
-		      excp instanceof CalloutException 
-		    ) {
+		        excp instanceof AsyncException ||
+		        excp instanceof CalloutException
+		   ) {
 			result = true;
-		} 
+		}
 		return result;
 	} // end of exceededGovernorLimits
 	///////////////////////////////////////////////////////////////////////////////////////////////

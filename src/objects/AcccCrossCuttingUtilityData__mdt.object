@@ -108,16 +108,6 @@
         <label>Triggers Enable</label>
         <type>Checkbox</type>
     </fields>
-    <fields>
-        <fullName>useCachingStrategy__c</fullName>
-        <defaultValue>true</defaultValue>
-        <description>Use the caching strategy. This value is checked in the default ctor of &apos;accc_ApexCacheMgr&apos;</description>
-        <externalId>false</externalId>
-        <fieldManageability>SubscriberControlled</fieldManageability>
-        <inlineHelpText>Use the caching strategy. This value is checked in the default ctor of &apos;accc_ApexCacheMgr&apos;</inlineHelpText>
-        <label>Use Caching Strategy</label>
-        <type>Checkbox</type>
-    </fields>
     <label>Accc Cross Cutting Utility Data</label>
     <pluralLabel>Accc Cross Cutting Utility Datas</pluralLabel>
     <visibility>Public</visibility>

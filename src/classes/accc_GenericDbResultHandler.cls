@@ -1,4 +1,3 @@
-
 /**
  * Copyright (c) 2016-2018, Bill Anderson.  All rights reserved.
  *

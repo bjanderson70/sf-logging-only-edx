@@ -57,15 +57,11 @@ public without sharing class accc_ApexKnownCCConcernsFallback extends accc_ApexB
             //
             '"' + accc_ApexConstants.CategoryInterface_s + '":' +
             '{' +
-            '"' + accc_ApexConstants.CacheResource + '": "accc_ICache",' +
-            '"' + accc_ApexConstants.CacheStrategy + '": "accc_IApexCachePolicyStrategy",' +
-            '"' + accc_ApexConstants.CacheStrategyInvocation + '": "accc_IApexCacheStrategyInvocation",' +
             '"' + accc_ApexConstants.ConfigurationResource + '": "accc_IConfigurationProvider",' +
             '"' + accc_ApexConstants.LoggerResource + '": "accc_ILogger",' +
             '"' + accc_ApexConstants.LogFormatter + '": "accc_IDataFormat",' +
             '"' + accc_ApexConstants.ExceptionHandler + '": "accc_IApexExceptionHandler",' +
             '"' + accc_ApexConstants.ExceptionFormatter + '": "accc_IDataFormat",' +
-            '"' + accc_ApexConstants.SendEmailChannel + '": "accc_IApexMessageSender",' +
             '"' + accc_ApexConstants.ExceptionPolicyHandler + '": "accc_IApexExceptionPolicyStrategy",' +
             '"' + accc_ApexConstants.PreviousTransactionResultResource + '": "accc_IPreviousTransactionResult",' +
             '"' + accc_ApexConstants.FactoryResource + '": "accc_IApexFactory",' +
@@ -78,15 +74,11 @@ public without sharing class accc_ApexKnownCCConcernsFallback extends accc_ApexB
 
             '"' + accc_ApexConstants.CategoryConcrete_s + '":' +
             '{' +
-            '"' + accc_ApexConstants.CacheResource + '": "accc_ApexCache",' +
-            '"' + accc_ApexConstants.CacheStrategy + '": "accc_ApexCachePolicyStrategy",' +
-            '"' + accc_ApexConstants.CacheStrategyInvocation + '": "accc_ApexCacheStrategyInvocation",' +
             '"' + accc_ApexConstants.ConfigurationResource + '": "accc_VirtualCustomSettings",' +
             '"' + accc_ApexConstants.LoggerResource + '": "accc_ApexObjectLogger",' +
             '"' + accc_ApexConstants.LogFormatter + '": "accc_ApexLogFormatter",' +
             '"' + accc_ApexConstants.ExceptionHandler + '": "accc_ApexExceptionHandler",' +
             '"' + accc_ApexConstants.ExceptionFormatter + '": "accc_ExceptionFormatter",' +
-            '"' + accc_ApexConstants.SendEmailChannel + '": "accc_ApexMailMessageSender",' +
             '"' + accc_ApexConstants.ExceptionPolicyHandler + '": "accc_ApexExceptionPolicyStrategy",' +
             '"' + accc_ApexConstants.PreviousTransactionResultResource + '": "accc_ApexPreviousTransactionResult",' +
             '"' + accc_ApexConstants.FactoryResource + '": "accc_ApexObjectFactory",' +
@@ -96,7 +88,6 @@ public without sharing class accc_ApexKnownCCConcernsFallback extends accc_ApexB
             //
             // other cc resources
             //
-            '"' + accc_ApexConstants.UseCachingStrategy_r + '": "true",' +
             '"' + accc_ApexConstants.TriggersEnabled_r + '": "true",' +
             '"' + accc_ApexConstants.TraceFlagOn_r + '": "false",' +
             '"' + accc_ApexConstants.SoftAsserts_r + '": "false",' +

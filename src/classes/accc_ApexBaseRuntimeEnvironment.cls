@@ -33,6 +33,9 @@
  * @author Bill Anderson
  * @description Implementation of the apex runtime environment for cross-cutting concerns.
  *     This class is a convience class as these values can be extracted from the factory, if so loaded.
+ *
+ *  NOTE: This is an abbreviate version: Cahcing, Cache Strategy and Messaging were removed
+ *
  * @group Common Layer
  */
 public virtual without sharing class accc_ApexBaseRuntimeEnvironment implements accc_IApexRunEnvironment {
@@ -52,11 +55,7 @@ public virtual without sharing class accc_ApexBaseRuntimeEnvironment implements 
     private static accc_ILogger aLogger = null;
     private static accc_IFallbackResources aResource = null;
     private static accc_IApexExceptionHandler anExceptionHandler = null;
-    private static accc_ICache aCache = null;
     private static accc_IPreviousTransactionResult aTransactionResult = null;
-    private static accc_IApexCachePolicyStrategy aCachePolicyStrategy = null;
-    private static accc_IApexCacheStrategyInvocation aCacheStrategyInvocation = null;
-    private static accc_IApexMessageSender aMessageSender = null;
 
 
     ////////////////////////////////////////////////////////////////////////////////
@@ -77,7 +76,7 @@ public virtual without sharing class accc_ApexBaseRuntimeEnvironment implements 
             // default  factory, subject to change
             result =  (accc_IApexFactory)accc_ApexBaseRuntimeEnvironment.ccResources.put(accc_ApexConstants.ObjectFactory, new accc_ApexObjectFactory());
         }
-         
+
         return result;
     } // end of objectFactory
 
@@ -91,7 +90,7 @@ public virtual without sharing class accc_ApexBaseRuntimeEnvironment implements 
             result = (accc_IConfigurationProvider)accc_ApexBaseRuntimeEnvironment.ccResources.put(accc_ApexConstants.ConfigurationResource,
                      this.objectFactory().create(accc_ApexConstants.ConfigurationResource));
         }
-        
+
         return result;
     } // end of provider
 
@@ -137,46 +136,7 @@ public virtual without sharing class accc_ApexBaseRuntimeEnvironment implements 
         return result;
     } // end of exceptionHandler
 
-    /**
-     * @description get the cache
-     * @return accc_ICache
-     */
-    public virtual accc_ICache cache() {
-        accc_ICache result = (accc_ICache)accc_ApexBaseRuntimeEnvironment.ccResources.get(accc_ApexConstants.CacheResource);
-        if ( result == null ) {
-            result = (accc_ICache) accc_ApexBaseRuntimeEnvironment.ccResources.put(accc_ApexConstants.CacheResource,
-                     this.objectFactory().create(accc_ApexConstants.CacheResource));
-        }
 
-        return result;
-    } // end of cache
-    /**
-     * @description get the cache strategy invocation
-     * @return accc_IApexCacheStrategyInvocation the caching strategy
-     */
-    public virtual accc_IApexCacheStrategyInvocation cacheStrategyInvocation() {
-        accc_IApexCacheStrategyInvocation result = (accc_IApexCacheStrategyInvocation)accc_ApexBaseRuntimeEnvironment.ccResources.get(accc_ApexConstants.CacheStrategyInvocation);
-        if ( result == null ) {
-            result = (accc_IApexCacheStrategyInvocation) accc_ApexBaseRuntimeEnvironment.ccResources.put(accc_ApexConstants.CacheStrategyInvocation,
-                     this.objectFactory().create(accc_ApexConstants.CacheStrategyInvocation));
-        }
-
-        return result;
-    } // end of cacheStrategyInvocation
-
-    /**
-    * @description get the cache strategy policy
-    * @return accc_IApexCachePolicyStrategy the caching policy strategy
-    */
-    public virtual accc_IApexCachePolicyStrategy cachePolicyStrategy() {
-        accc_IApexCachePolicyStrategy result = (accc_IApexCachePolicyStrategy)accc_ApexBaseRuntimeEnvironment.ccResources.get(accc_ApexConstants.CacheStrategy);
-        if ( result == null ) {
-            result  = (accc_IApexCachePolicyStrategy) accc_ApexBaseRuntimeEnvironment.ccResources.put(accc_ApexConstants.CacheStrategy,
-                      this.objectFactory().create(accc_ApexConstants.CacheStrategy));
-        }
-
-        return result;
-    } // end of cachePolicyStrategy
     /**
      * @description get the transaction result
      * @return accc_IPreviousTransactionResult
@@ -190,19 +150,7 @@ public virtual without sharing class accc_ApexBaseRuntimeEnvironment implements 
 
         return result;
     } // end of transactionResult
-    /**
-     * @description get the sender of messages
-     * @return accc_IApexMessageSender
-     */
-    public virtual accc_IApexMessageSender messageSender() {
-        accc_IApexMessageSender result = (accc_IApexMessageSender)accc_ApexBaseRuntimeEnvironment.ccResources.get(accc_ApexConstants.SendEmailChannel);
-        if ( result == null ) {
-            result   = (accc_IApexMessageSender)  accc_ApexBaseRuntimeEnvironment.ccResources.put(accc_ApexConstants.SendEmailChannel,
-                       this.objectFactory().create(accc_ApexConstants.SendEmailChannel));
-        }
 
-        return result;
-    } // end of messageSender
     //////////////////////////////////////////////////////////////////////
     // Setters
     //////////////////////////////////////////////////////////////////////
@@ -253,14 +201,7 @@ public virtual without sharing class accc_ApexBaseRuntimeEnvironment implements 
         accc_ApexBaseRuntimeEnvironment.ccResources.put(accc_ApexConstants.ExceptionHandler, handler);
     } // end of fallbackResources
 
-    /**
-     * @description set the cache
-     *
-     * @param cache accc_ICache
-     */
-    public void cache(accc_ICache cache) {
-        accc_ApexBaseRuntimeEnvironment.ccResources.put(accc_ApexConstants.CacheResource, cache);
-    } // end of cache
+
 
     /**
      * @description set the previous transacton result
@@ -276,26 +217,7 @@ public virtual without sharing class accc_ApexBaseRuntimeEnvironment implements 
     *
     * @param accc_IApexCacheStrategyInvocation cache strategy
     */
-    public void cacheStrategyInvocation(accc_IApexCacheStrategyInvocation cacheStrategyInvo) {
-        accc_ApexBaseRuntimeEnvironment.ccResources.put(accc_ApexConstants.CacheStrategyInvocation, cacheStrategyInvo);
-    } // end of cacheStrategyInvocation
 
-
-    /**
-    * @description set the cache strategy polict
-    *
-    * @param accc_IApexCachePolicyStrategy cache policy
-    */
-    public void cachePolicyStrategy(accc_IApexCachePolicyStrategy theCachePolicyStrategy) {
-        accc_ApexBaseRuntimeEnvironment.ccResources.put(accc_ApexConstants.CacheStrategy, theCachePolicyStrategy);
-    } // end of cachePolicyStrategy
-    /**
-     * @description set the message sender
-     * @parsam accc_IApexMessageSender message channel
-     */
-    public void messageSender(accc_IApexMessageSender theMessageSender) {
-        accc_ApexBaseRuntimeEnvironment.ccResources.put(accc_ApexConstants.SendEmailChannel, theMessageSender);
-    } // end of messageSender
     ////////////////////////////////////////////////////////////////////////////////
     /// Protected  Properties
     ////////////////////////////////////////////////////////////////////////////////
@@ -369,42 +291,7 @@ public virtual without sharing class accc_ApexBaseRuntimeEnvironment implements 
     } // end of theLogger
 
 
-    /**
-     * @description Just return the current cache
-     *
-     * @return accc_ICache the Cache
-     */
-    @TestVisible
-    protected accc_ICache theCache {
-        get {
-            return (accc_ICache)accc_ApexBaseRuntimeEnvironment.ccResources.get(accc_ApexConstants.CacheResource);
-        }
-    } // end of theCache
 
-
-    /** @description Just return the current cache policy strategy
-    *
-    * @return  accc_IApexCachePolicyStrategy the Cache Policy Strategy
-    */
-    @TestVisible
-    protected accc_IApexCachePolicyStrategy theCachePolicyStrategy {
-        get {
-            return (accc_IApexCachePolicyStrategy)accc_ApexBaseRuntimeEnvironment.ccResources.get(accc_ApexConstants.CacheStrategy);
-        }
-    } // end of theCachePolicyStrategy
-
-
-    /**
-     * @description Just return the current cache strategy innocation
-     *
-     * @return  accc_IApexCacheStrategyInvocation the Cache Strategy Invocation
-     */
-    @TestVisible
-    protected accc_IApexCacheStrategyInvocation theCacheStrategyInvocation {
-        get {
-            return (accc_IApexCacheStrategyInvocation)accc_ApexBaseRuntimeEnvironment.ccResources.get(accc_ApexConstants.CacheStrategyInvocation);
-        }
-    } // end of theCacheStrategyInvocation
 
     /** @description Just return the previous transacton result
     *
@@ -417,15 +304,4 @@ public virtual without sharing class accc_ApexBaseRuntimeEnvironment implements 
         }
     } // end of thePreviousTransactionResult
 
-
-    /** @description Just return the message sender
-    *
-    * @return  accc_IApexMessageSender the Message Sender
-    */
-    @TestVisible
-    protected accc_IApexMessageSender theMessageSender {
-        get {
-            return (accc_IApexMessageSender)accc_ApexBaseRuntimeEnvironment.ccResources.get(accc_ApexConstants.SendEmailChannel);
-        }
-    } // end of theMessageSender
 }
