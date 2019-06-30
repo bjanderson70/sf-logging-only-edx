@@ -79,7 +79,6 @@
 		<members>accc_IApexExceptionHandler</members>
 		<members>accc_IApexExceptionPolicyStrategy</members>
 		<members>accc_IApexFactory</members>
-		<members>accc_IApexMessageSender</members>
 		<members>accc_IApexObjectGetter</members>
 		<members>accc_IApexPlatformEventHandler</members>
 		<members>accc_IApexRunEnvironment</members>
