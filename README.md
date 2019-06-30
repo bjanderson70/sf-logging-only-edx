@@ -27,9 +27,9 @@ All code, files and objects related to Apex Cross-Cutting Concerns are prefixed 
 
 To deploy/install select the button below
 
-<a href="https://githubsfdeploy.herokuapp.com/app/githubdeploy/bjanderson70/sf-logging-only-edx">
+<a href="https://githubsfdeploy.herokuapp.com?owner=bjanderson70&repo=sf-logging-only-edx">
   <img alt="Deploy to Salesforce"
-       src="imgs/deploy_to_sf.png">
+       src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
 </a>
 
 ## Apex Docs
