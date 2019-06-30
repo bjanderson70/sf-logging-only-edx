@@ -21,11 +21,11 @@
 	  <div class=WordSection1>
 
 <h1>Cross-Cutting Concerns (CCC)</h1>
-<p>Version 0.9.5</p>  
+<p>Version 0.9.6.1</p>  
 
 <h2>What is it?</h2>
 
-<p class=MsoNormal>The cross-cutting concerns/aspects consist of security,caching, exception handling, logging, etc. These aspects transcend into other concerns (i.e., layers). In a simple layered architecture you have three common layers: Presentation, Business and Data. The cross-cutting concerns are applicable throughout the architecture layers and it affects the entire  application. For example: logging, security and data transfer are the concerns which are needed in almost every module of an application, hence they are
+<p class=MsoNormal>The cross-cutting concerns/aspects consist of security, exception handling, logging, etc. These aspects transcend into other concerns (i.e., layers). In a simple layered architecture you have three common layers: Presentation, Business and Data. The cross-cutting concerns are applicable throughout the architecture layers and it affects the entire  application. For example: logging, security and data transfer are the concerns which are needed in almost every module of an application, hence they are
 cross-cutting concerns.</p>
 
 <h2>What is the value?</h2>
@@ -126,7 +126,7 @@ three runtime environments:</p>
                </a>
             </td>
             <td>
-			The Data model provides access to the custom metadata. This allows the run-time environment to vary as needed.
+			The Data model provides access to the custom metadata. This allows the run-time environment to vary as needed. Note, this version remove the caching mechanism.
               </td>
           </tr>
          <tr>
@@ -146,7 +146,7 @@ three runtime environments:</p>
                </a>
             </td>
             <td>
-			Caching implementation provides a finer grain of control in order to avoid caching everything mentality. The goal was to encapsulate the behaviour into accc_ApexCacheMgr. This will allow for an easier adoption and maintenance going forward.
+			Caching implementation is not provided in this abbreviated version. However, it is available via the link above.
             </td>
          </tr>
          <tr>
