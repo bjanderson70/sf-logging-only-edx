@@ -43,11 +43,6 @@
 		<members>accc_ApexLogFormatterTest</members>
 		<members>accc_ApexLogger</members>
 		<members>accc_ApexLoggerTest</members>
-		<members>accc_ApexMailMessageSender</members>
-		<members>accc_ApexMailMessageSenderTest</members>
-		<members>accc_ApexMessagePayload</members>
-		<members>accc_ApexMessageSendResponse</members>
-		<members>accc_ApexMessageSendResponseTest</members>
 		<members>accc_ApexNoOpLogger</members>
 		<members>accc_ApexNoOpLoggerTest</members>
 		<members>accc_ApexObjectFactory</members>
