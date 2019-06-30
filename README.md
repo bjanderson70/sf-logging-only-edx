@@ -3,7 +3,7 @@
 # sf-logging-only-edx
 Logging Only concerns for apex code [WIP]. Adapting to SFDX as well as extensions to accomodate new features
 
-This code designed to encapsulate common logging concerns . See the [Wiki](https://github.com/bjanderson70/sf-cross-cutting-concerns/wiki) for more informaiton on logging aspects.
+This code designed to encapsulate common logging concerns . See the [Wiki](https://github.com/bjanderson70/sf-logging-only-edx/wiki) for more informaiton on logging aspects.
 
 ## Getting Started
 
