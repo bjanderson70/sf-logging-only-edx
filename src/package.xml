@@ -125,49 +125,5 @@
 		<members>AcccApplicationLog__c-Accc Application Log Layout</members>
 		<name>Layout</name>
 	</types>
-	 <types>
-            <members>accc_ApexApplicationExceptionTest</members>
-			<members>accc_ApexBaseFallbackTest</members>
-			<members>accc_ApexBaseRuntimeEnvironmentTest</members>
-			<members>accc_ApexClassInstanceMgrTest</members>
-			<members>accc_ApexEnvironmentTest</members>
-			<members>accc_ApexExceptionHandlerTest</members>
-			<members>accc_ApexExceptionPolicyStrategyTest</members>
-			<members>accc_ApexKnownCCConcernsFallbackTest</members>
-			<members>accc_ApexLocalL1CacheTest</members>
-			<members>accc_ApexLogDataModelTest</members>
-			<members>accc_ApexLogFormatterTest</members>
-			<members>accc_ApexLoggerTest</members>
-			<members>accc_ApexNoOpLoggerTest</members>
-			<members>accc_ApexObjectFactoryTest</members>
-			<members>accc_ApexObjectLoggerTest</members>
-			<members>accc_ApexPerformanceMetricsTest</members>
-			<members>accc_ApexPlatformEventDispatcherTest</members>
-			<members>accc_ApexPreviousTransactionResultTest</members>
-			<members>accc_ApexPublishEventLoggerTest</members>
-			<members>accc_ApexTestJSONDataFallbackTest</members>
-			<members>accc_ApexTestUtilities</members>
-			<members>accc_ApexUtilitiesTest</members>
-			<members>accc_ApplicationLogTest</members>
-			<members>accc_BaseMdtDataModelTest</members>
-			<members>accc_CrossCuttingConfigDataModelTest</members>
-			<members>accc_CrossCuttingConfigMgrTest</members>
-			<members>accc_CrossCuttingUtilityDataModelTest</members>
-			<members>accc_CustomSettingsTest</members>
-			<members>accc_ExceptionFormatterTest</members>
-			<members>accc_GenericDbResultHandlerTest</members>
-			<members>accc_LogPlatformEventHandlerTest</members>
-			<members>accc_MessageTransformationTest</members>
-			<members>accc_NameValuePairTest</members>
-			<members>accc_QueableSObjectsTest</members>
-			<members>accc_SObjectBaseWriterTest</members>
-			<members>accc_StopWatchTest</members>
-			<members>accc_SyncAsyncWriterTest</members>
-			<members>accc_TestEnvironmentSingletonTest</members>
-			<members>accc_TestUtility</members>
-			<members>accc_TriggerHelperClassTest</members>
-			<members>accc_VirtualCustomSettingsTest</members>
-        <name>ApexTestSuite</name>
-    </types>
     <version>46.0</version>
 </Package>
