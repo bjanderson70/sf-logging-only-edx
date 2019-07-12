@@ -38,7 +38,6 @@ If you download **CCCDocs** directory and navigate to _ApexDocumentation_ direct
 ## Contributing
 
 Please read [Contributing](Contributing) for details on our code of conduct, and the process for submitting pull requests to us.
-
 ## Versioning
 
 version 0.9.6
@@ -47,7 +46,7 @@ version 0.9.6
 
 * **Bill Anderson** 
 * **Jason Stone**
-* **Chris Soutworth**
+* **Chris Southworth**
 * **Ian Szemere**
 
 ## License
