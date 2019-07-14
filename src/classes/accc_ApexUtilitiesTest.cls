@@ -84,7 +84,7 @@ private class accc_ApexUtilitiesTest {
     @isTest static void testgetSobjectNameWithList() {
         //assign
         String expected = 'Account';
-        List<Account> alist = new List<Account> {
+        List<SObject> alist = new List<Account> {
             new account(Name = 'Acme', Description = 'Acme Account')
         };
         insert alist;
@@ -93,6 +93,17 @@ private class accc_ApexUtilitiesTest {
         // assert
         System.assertEquals(expected, result);
     } // end of testgetSobjectName
+
+      @isTest static void testgetSobjectNameWithNullList() {
+        //assign
+        String expected = accc_ApexConstants.EmptyString;
+        List<SObject> alist = null;
+        // act
+        String result = accc_ApexUtilities.getSobjectName(alist);
+        // assert
+        System.assertEquals(expected, result);
+    } // end of testgetSobjectNameWithNullList
+
 
     /**
      * @description test toString
@@ -298,10 +309,22 @@ private class accc_ApexUtilitiesTest {
         // assign
         String result = 'This is a Test';
         // assign/act
-        accc_ApexUtilities.log(result);
+        accc_ApexUtilities.log(result,true);
         // assert
         System.assertEquals(accc_ApexUtilities.containsInTestLog(result), true);
     } // end of testcontainsInTestLog
+
+
+    @isTest static void testgetClassInstance() {
+        // assign
+        String className = 'accc_ApexUtilities';
+        // assign/act
+
+        // assert
+        System.assertEquals(true, accc_ApexUtilities.getClassInstance(className) != null);
+        // assert
+        System.assertEquals(true, accc_ApexUtilities.getClassInstance('') == null);
+    } // end of testgetClassInstance
 
     @isTest static void testcontainsExceptionInApplicationLog() {
         // assign
@@ -732,7 +755,42 @@ private class accc_ApexUtilitiesTest {
         Schema.SObjectType ns = accc_ApexUtilities.getSobjectTypeFromSObject(sob);
         // assert
         System.assertEquals(expected, ns);
+        System.assertEquals(expected, accc_ApexUtilities.getSobjectTypeFromSObject(new List<SObject>{sob}));
+        System.assertEquals(null, accc_ApexUtilities.getSobjectTypeFromSObject((SObject)null));
     } // end of testgetSobjectTypeFromSObject
+
+    
+    @isTest
+    static void testconvertDayToString() {
+        //assign
+        // act
+        // assert
+        System.assertEquals('01', accc_ApexUtilities.convertDayToString(1));
+        System.assertEquals('01', accc_ApexUtilities.convertDayToString(0));
+        System.assertEquals('31', accc_ApexUtilities.convertDayToString(32));
+        System.assertEquals('31', accc_ApexUtilities.convertDayToString(31));
+        System.assertEquals('30', accc_ApexUtilities.convertDayToString(30));
+        System.assertEquals('10', accc_ApexUtilities.convertDayToString(10));
+        System.assertEquals('12', accc_ApexUtilities.convertDayToString(12));
+        System.assertEquals('21', accc_ApexUtilities.convertDayToString(21));
+        System.assertEquals('15', accc_ApexUtilities.convertDayToString(15));
+    }// end of testconvertDayToString
+
+    @isTest
+    static void testconvertMonthToString() {
+        //assign
+        // act
+        // assert
+        System.assertEquals('01', accc_ApexUtilities.convertMonthToString(1));
+        System.assertEquals('01', accc_ApexUtilities.convertMonthToString(0));
+        System.assertEquals('12', accc_ApexUtilities.convertMonthToString(32));
+        System.assertEquals('12', accc_ApexUtilities.convertMonthToString(12));
+
+        System.assertEquals('10', accc_ApexUtilities.convertMonthToString(10));
+        System.assertEquals('01', accc_ApexUtilities.convertMonthToString(-1));
+        System.assertEquals('02', accc_ApexUtilities.convertMonthToString(2));
+        System.assertEquals('10', accc_ApexUtilities.convertMonthToString(10));
+    }// end of convertMonthToString
 
     @isTest
     static void testexceededGovernorLimits() {
@@ -763,4 +821,5 @@ private class accc_ApexUtilitiesTest {
         // assert
         System.assertEquals(accc_ApexUtilities.containsInTestLog(result), true);
     } // end of testTrace
+    
 } // end of accc_ApexUtilitiesTest

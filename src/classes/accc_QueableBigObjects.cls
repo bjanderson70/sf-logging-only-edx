@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016-2018, Bill anderson.  All rights reserved.
+ * Copyright (c) 2016-2019, Bill Anderson.  All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -13,7 +13,7 @@
  *     the documentation and/or other materials provided with the
  *     distribution.
  *
- *   * Neither the name of Bill anderson nor the names of its
+ *   * Neither the name of Bill Anderson nor the names of its
  *     contributors may be used to endorse or promote products derived
  *     from this software without specific prior written permission.
  *
@@ -29,15 +29,12 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * @author Bill anderson
- * @description Encapsulates all behaviour logic relating to the Queuable SObject. As DML limits
- * can be incur batching may provide an better alternative
- *
- *
+ * @author Bill Anderson
+ * @description Queuable for Big Objects
  * @group Common Layer
- **/
+ */
+public virtual without sharing class accc_QueableBigObjects extends accc_QueableSObjects {
 
-public virtual without sharing class accc_QueableSObjects extends accc_SObjectBaseWriter implements Queueable  {
 	/////////////////////////////////////////////////////////////////////////
 	// Data Members
 	/////////////////////////////////////////////////////////////////////////
@@ -45,14 +42,14 @@ public virtual without sharing class accc_QueableSObjects extends accc_SObjectBa
 	/////////////////////////////////////////////////////////////////////////
 	// Ctors
 	/////////////////////////////////////////////////////////////////////////
-
 	/**
 	* @description ctor to insert/or remove SObjects
 	*
 	* @param sentries data entries
 	*/
-	public accc_QueableSObjects(List<SObject> sentries) {
+	public accc_QueableBigObjects(List<SObject> sentries) {
 		super(sentries, false);
+		super.isBigObject = true;
 	}// end ctor
 
 	/**
@@ -62,21 +59,10 @@ public virtual without sharing class accc_QueableSObjects extends accc_SObjectBa
 	 * @param remove true if to remove data; otherwise insert
 	 *
 	 */
-	public accc_QueableSObjects(List<SObject> sentries, boolean remove) {
+	public accc_QueableBigObjects(List<SObject> sentries, boolean remove) {
 		super(sentries, remove);
+		super.isBigObject = true;
 	}// end ctor
 
-	/////////////////////////////////////////////////////////////////////////
-	// Public Methods
-	/////////////////////////////////////////////////////////////////////////
-	/**
-	 * @description required by the queueable ... for chaining
-	 *
-	 * @param context queueble context
-	 */
-	public virtual void execute(QueueableContext context) {
-		// Your processing logic here
-		super.execute();
-	} // end of execute
 
-} // end of accc_QueableSObjects
+} // end of accc_QueableBigObjects

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016-2018, Bill anderson.  All rights reserved.
+ * Copyright (c) 2016-2019, Bill anderson.  All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -42,6 +42,36 @@ public virtual without sharing class accc_ApexUtilities {
 	////////////////////////////////////////////////////////////////////////////////
 	/// Data Members
 	////////////////////////////////////////////////////////////////////////////////
+
+	public static final integer MAX_DAY_IN_MONTH = 31;
+	public static final integer MAX_NUM_OF_MONTH = 12;
+
+	/**
+	 * Month Index to 2 char string
+	 */
+	private static  Map<Integer, String> MonthIndex = new Map<Integer, String> {
+		1 => '01'
+		, 2 => '02'
+		, 3 => '03'
+		, 4 => '04'
+		, 5 => '05'
+		, 6 => '06'
+		, 7 => '07'
+		, 8 => '08'
+		, 9 => '09'
+		, 10 => '10'
+		, 11 => '11'
+		, 12 => '12'
+	} ;
+	/**
+	 * Day indexto 2 char string
+	 */
+	private static  Map<Integer, String> DayIndex = new Map<Integer, String> {
+		1 => '01', 2 => '02', 3 => '03', 4 => '04', 5 => '05', 6 => '06', 7 => '07', 8 => '08', 9 => '09', 10 => '10'
+		, 11 => '11', 12 => '12', 13 => '13', 14 => '14', 15 => '15', 16 => '16', 17 => '17', 18 => '18', 19 => '19', 20 => '20'
+		, 21 => '21', 22 => '22', 23 => '23', 24 => '24', 25 => '25', 26 => '26', 27 => '27', 28 => '28', 29 => '29', 30 => '30'
+		, 31 => '31'
+	} ;
 
 	@TestVisible
 	private static List<String> logTestData = null;
@@ -596,10 +626,11 @@ public virtual without sharing class accc_ApexUtilities {
 	public static void log(Exception excp) {
 		if (excp != null) {
 			accc_IApexRunEnvironment runtime = accc_ApexEnvironment.getRuntimeEnvironment();
-			// handle execptions
-			runtime.exceptionHandler().process(excp);
 			// used to test information sent from a test
 			accc_ApexUtilities.logForTesting(excp.getMessage());
+			// handle execptions
+			runtime.exceptionHandler().process(excp);
+
 		}
 	} // end of log
 	/**
@@ -941,7 +972,7 @@ public virtual without sharing class accc_ApexUtilities {
 	} // end of getClassInstance
 
 	/**
-	 * @brief get the Type from the SObject collection
+	 * @brief get the Type from the SObject collection (does not handle MIXed SOBject)
 	 * @description  get the Type from the SObject collection
 	 *
 	 * @param theSObject type we want
@@ -951,12 +982,20 @@ public virtual without sharing class accc_ApexUtilities {
 		Schema.SObjectType sType = null;
 
 		try {
-			if ( theSObject != null ) {
+			boolean isValid = theSObject != null;
+			if ( isValid ) {
 				sType = theSObject.getSobjectType();
+			}
+			// still can't figure it out, then ONLY look at the first one!
+			if ( sType == null
+			        && isValid
+			        && theSObject.size() > 0 ) {
+				sType = accc_Apexutilities.getSobjectTypeFromSObject(theSObject[0]);
 			}
 		} catch  (Exception excp) {
 
 		}
+
 		return sType;
 	} // end of getSobjectTypeFromSObject
 
@@ -977,6 +1016,7 @@ public virtual without sharing class accc_ApexUtilities {
 		} catch  (Exception excp) {
 
 		}
+
 		return sType;
 	} // end of getSobjectTypeFromSObject
 	/**
@@ -998,6 +1038,50 @@ public virtual without sharing class accc_ApexUtilities {
 		}
 		return result;
 	} // end of exceededGovernorLimits
+	/**
+	 *  @description split a string based on expression ( ie. whitespace \s)
+	 *
+	 * @param input string to split
+	 * @param expression expressions (i.e., \s | , | ;)
+	 *
+	 * @return collection of strings split by expression
+	 */
+	public static List<String> splitStringOnExpression(string input, string expression) {
+
+		List<String> result = null;
+		// we split on whitespace, comma or semi-colon
+		if ( !string.isBlank(input)
+		        && !string.isBlank(expression)
+		        && input.length() > 0
+		        && expression.length() > 0) {
+			result = input.split(expression);
+		} else {
+			result = new List<String>();
+		}
+		return result;
+	} // end of splitStringOnExpression
+
+	/**
+	 * @description get month string
+	 *
+	 * @param value month values 1 to 12
+	 * @return two char string, 1 == '01'
+	 */
+	public static String convertMonthToString(integer value) {
+		integer index = value <= 0 ?  1 : value > MAX_NUM_OF_MONTH ? MAX_NUM_OF_MONTH : value;
+		return MonthIndex.get(index);
+	} // end of convertMonthToString
+
+	/**
+	 * @description get month string
+	 *
+	 * @param value month values 1 to 31
+	 * @return two char string, 1 == '01'
+	 */
+	public static String convertDayToString(integer value) {
+		integer index = value <= 0 ?  1 : value > MAX_DAY_IN_MONTH ? MAX_DAY_IN_MONTH : value;
+		return DayIndex.get(index);
+	} // end of convertDayToString
 	///////////////////////////////////////////////////////////////////////////////////////////////
 	//
 	// Private Static Methods
@@ -1053,30 +1137,5 @@ public virtual without sharing class accc_ApexUtilities {
 		}
 		return found;
 	} // end of containsInTestLog
-
-	/**
-	 *  @description split a string based on expression ( ie. whitespace \s)
-	 *
-	 * @param input string to split
-	 * @param expression expressions (i.e., \s | , | ;)
-	 *
-	 * @return collection of strings split by expression
-	 */
-	@TestVisible
-	private static List<String> splitStringOnExpression(string input, string expression) {
-
-		List<String> result = null;
-		// we split on whitespace, comma or semi-colon
-		if ( !string.isBlank(input)
-		        && !string.isBlank(expression)
-		        && input.length() > 0
-		        && expression.length() > 0) {
-			result = input.split(expression);
-		} else {
-			result = new List<String>();
-		}
-		return result;
-	} // end of splitStringOnExpression
-
 
 } // end of accc_ApexUtilities
