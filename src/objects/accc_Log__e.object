@@ -69,5 +69,5 @@
     </fields>
     <label>accc_Log</label>
     <pluralLabel>accc_Logs</pluralLabel>
-    <publishBehavior>PublishImmediately</publishBehavior>
+    <!-- <publishBehavior>PublishImmediately</publishBehavior> -->
 </CustomObject>
