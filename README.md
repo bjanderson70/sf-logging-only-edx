@@ -1,7 +1,7 @@
 
 ![logo](https://github.com/bjanderson70/sf-logging-only-edx/blob/master/imgs/LoggingOnly.png)
 # sf-logging-only-edx
-Logging Only concerns for apex code [WIP]. Adapting to SFDX as well as extensions to accomodate new features
+Logging Only concerns for apex code [Use the main sf-cross-cutting-concerns for all funcitonality]. I **will not be supporting** this version.
 
 This code designed to encapsulate common logging concerns . See the [Wiki](https://github.com/bjanderson70/sf-logging-only-edx/wiki) for more informaiton on logging aspects.
 
