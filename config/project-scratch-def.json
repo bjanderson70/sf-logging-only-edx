@@ -1,7 +1,14 @@
 {
-    "orgName": "Unknown-Scratch-Org-Name",
+    "orgName": "WFLogging-Scratch-Org",
     "edition": "Developer",
-	"features": ["MultiCurrency", "AuthorApex", "DebugApex","BigObjectsBulkAPI","ChangeDataCapture","PlatformCache","PersonAccounts","PlatformEncryption"],
+    "features": [
+            "MultiCurrency", 
+            "AuthorApex",
+            "DebugApex",
+            "BigObjectsBulkAPI",
+            "PlatformCache",
+            "PlatformEncryption"
+    ],
     "settings": {
       "communitiesSettings": {
           "enableNetworksEnabled": false

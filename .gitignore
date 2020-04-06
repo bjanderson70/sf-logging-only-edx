@@ -28,6 +28,14 @@ node_modules/
 # MacOS system files
 .DS_Store
 
+# misc
+.prettier*
+package.json
+./mdapi
+.vscode
+uncrustify.cfg
+.vim-force.com
+
 # Windows system files
 Thumbs.db
 ehthumbs.db
