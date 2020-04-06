@@ -26,15 +26,22 @@ In Salesforce Org, navigate to **Setup->Apex Classes** and run all tests.
 
 All code, files and objects related to Apex Cross-Cutting Concerns are prefixed with 'accc'
 
-## Deployment
+## Deployment or Retrieval
 
 To deploy/install select the button below
 
+ **Retrieve From your Org**
  1. clone git repo
  2. cd sf-logging-only-edx
     - may need to oauth to Org
- 3. mkdir ./mdapipkg
+ 3. mkdir ./mdapipkg # if not already defined
  4. sfdx force:mdapi:retrieve -r ./mdapipkg -u <TargetUserName> -k manifest/package.xml
+ 
+  **Deploy To your Org**
+ 1. clone git repo
+ 2. cd sf-logging-only-edx 
+ - may need to oauth to Org
+ 3. sfdx force:source:deploy -p force-app/
 
 ## Apex Docs
 If you download **CCCDocs** directory and navigate to _ApexDocumentation_ directory and bring up _index.htm_ in the browser you will get the JavaDoc-like information. The documentation will also link to the Wiki
