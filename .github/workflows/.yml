@@ -1,2 +1,0 @@
-- name: Salesforce SFDX CLI Action
-  uses: sfdx-actions/setup-sfdx@v1
