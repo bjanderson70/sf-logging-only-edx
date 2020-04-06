@@ -6,8 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-      if: github.event.action == 'opened' || github.event.action == 'synchronize'
+    - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
       with:
         node-version: '10.x'
@@ -28,6 +27,7 @@ jobs:
     - name: Define Scratch org (CI)
       run: |
         echo `pwd` 
+        echo `ls`
         echo `ls ..`
         node_modules/sfdx-cli/bin/run force:org:create -v devhub -s -f ../config/project-scratch-def.json -a ciorg -d 1
 
