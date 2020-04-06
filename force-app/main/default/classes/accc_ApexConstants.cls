@@ -204,7 +204,7 @@ public class accc_ApexConstants {
     *
     * Current Version
     ************************************************************************************/
-    public static final String CURRENT_VERSION = '0.9.6.1';
+    public static final String CURRENT_VERSION = '0.9.9.1';
     /************************************************************************************
     *
     * Set the is test running ( instead of checking multiple times in code -- waste of a function call)
