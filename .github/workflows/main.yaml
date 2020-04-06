@@ -26,7 +26,10 @@ jobs:
         JWT_KEY_FILE: ${{ secrets.JWT_KEY_FILE }}
       
     - name: Define Scratch org (CI)
-      run: node_modules/sfdx-cli/bin/run force:org:create -v devhub -s -f config/project-scratch-def.json -a ciorg -d 1
+      run: |
+        echo `pwd` 
+        echo `ls`
+        node_modules/sfdx-cli/bin/run force:org:create -v devhub -s -f config/project-scratch-def.json -a ciorg -d 1
 
     - name: Deploy source
       run: node_modules/sfdx-cli/bin/run force:source:push -u ciorg
