@@ -1,0 +1,30 @@
+{
+    "orgName": "Unknown-Scratch-Org-Name",
+    "edition": "Developer",
+	"features": ["MultiCurrency", "AuthorApex", "DebugApex","BigObjectsBulkAPI","ChangeDataCapture","PlatformCache","PersonAccounts","PlatformEncryption"],
+    "settings": {
+      "communitiesSettings": {
+          "enableNetworksEnabled": false
+      },
+      "mobileSettings": {
+          "enableS1EncryptedStoragePref2": false
+      },
+      "omniChannelSettings": {
+          "enableOmniChannel": false
+      },
+      "caseSettings": {
+          "systemUserEmail": "support@acme.com"
+      },
+	  "lightningExperienceSettings": {
+            "enableS1DesktopEnabled": true
+      },
+	  "chatterSettings": {
+            "enableChatter": false
+      },
+	  "securitySettings": {
+		"sessionSettings":{
+			"sessionTimeout": "TwelveHours"
+		}
+      }
+  }
+}
