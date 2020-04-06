@@ -16,8 +16,11 @@ SFDX package
 
 ## Running the tests
 
-The unit tests have a minimum of 90% code coverage. Tests can be invoked from favortite case tool.
-In Salesforce Org, navigate to **Setup->Apex Classes** and run all tests
+The unit tests have a minimum of 96% code coverage. Tests can be invoked from favortite case tool.
+In Salesforce Org, navigate to **Setup->Apex Classes** and run all tests. 
+
+First, push into scratch or, **sfdx force:source:push -u WFLogging-Scratch-Org -w 30**.
+Second, run tests, **sfdx force:apex:test:run -y -c -r human** (assumes only one scratch org; otherwise, will need -u parameter)
 
 ### And coding style tests
 
@@ -27,10 +30,11 @@ All code, files and objects related to Apex Cross-Cutting Concerns are prefixed 
 
 To deploy/install select the button below
 
-<a href="https://githubsfdeploy.herokuapp.com?owner=bjanderson70&repo=sf-logging-only-edx">
-  <img alt="Deploy to Salesforce"
-       src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
-</a>
+ (1) clone git repo
+ (2) cd sf-logging-only-edx
+    (2a) may need to oauth to Org
+ (3) mkdir ./mdapipkg
+ (4) sfdx force:mdapi:retrieve -r ./mdapipkg -u <TargetUserName> -k manifest/package.xml
 
 ## Apex Docs
 If you download **CCCDocs** directory and navigate to _ApexDocumentation_ directory and bring up _index.htm_ in the browser you will get the JavaDoc-like information. The documentation will also link to the Wiki
