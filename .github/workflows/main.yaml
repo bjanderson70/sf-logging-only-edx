@@ -36,6 +36,6 @@ jobs:
     - name: Deploy source
       run: node_modules/sfdx-cli/bin/run force:source:push -u ci_runner
 
-
     - name: sfdx-test-run
-        run: sfdx force:apex:test:run -l RunLocalTests -w 30
+      run: |
+        sfdx force:apex:test:run -l RunLocalTests -w 30
