@@ -33,4 +33,4 @@ jobs:
     - name: Deploy source
       run: node_modules/sfdx-cli/bin/run force:source:push -u ci_runner
 
-    - uses: actions/sfdx-test
+    - uses: actions/sfdx-test@master
