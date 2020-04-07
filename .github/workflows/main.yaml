@@ -15,26 +15,21 @@ jobs:
     - uses: sfdx-actions/setup-sfdx@v1
       with:
         sfdx-auth-url: ${{ secrets.AUTH_SECRET }}
-
-    - name: Install Salesforce CLI
-      run: |
-        npm install sfdx-cli
-        node_modules/sfdx-cli/bin/run --version
-        node_modules/sfdx-cli/bin/run plugins --core
-      
+    
     - name: Authenticate DevHub
       run: |
         echo "${JWT_KEY_FILE}" > ./server.key
-        node_modules/sfdx-cli/bin/run force:auth:jwt:grant --clientid ${{ secrets.CONSUMER_KEY }} --jwtkeyfile ./server.key --username ${{ secrets.HUB_USERNAME}} --setdefaultdevhubusername -a devhub
+        sfdx force:auth:jwt:grant --clientid ${{ secrets.CONSUMER_KEY }} --jwtkeyfile ./server.key --username ${{ secrets.HUB_USERNAME}} --setdefaultdevhubusername -a devhub
       env:
         JWT_KEY_FILE: ${{ secrets.JWT_KEY_FILE }}
       
     - name: Define Scratch org (CI)
       run: |
-        node_modules/sfdx-cli/bin/run force:org:create -v devhub -s -f config/project-scratch-def.json -a ci_runner -d 1
+        sfdx force:org:create -v devhub -s -f config/project-scratch-def.json -a ci_runner -d 1
 
     - name: Deploy source
-      run: node_modules/sfdx-cli/bin/run force:source:push -u ci_runner
+      run: |
+        sfdx force:source:push -u ci_runner
 
     - name: sfdx-test-run
       run: |
