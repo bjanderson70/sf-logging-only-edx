@@ -12,6 +12,9 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '10.x'
+    - uses: sfdx-actions/setup-sfdx@v1
+      with:
+        sfdx-auth-url: ${{ secrets.AUTH_SECRET }}
 
     - name: Install Salesforce CLI
       run: |
@@ -33,8 +36,6 @@ jobs:
     - name: Deploy source
       run: node_modules/sfdx-cli/bin/run force:source:push -u ci_runner
 
-    - uses: sfdx-actions/setup-sfdx@v1
-       with:
-          sfdx-auth-url: ${{ secrets.AUTH_SECRET }}
+
     - name: sfdx-test-run
         run: sfdx force:apex:test:run -l RunLocalTests -w 30
