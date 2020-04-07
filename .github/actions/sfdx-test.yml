@@ -1,5 +1,4 @@
 name: SFDX Test Run on Push
-
 on: [push]
 
 jobs:
