@@ -20,17 +20,8 @@ jobs:
       run: |
         echo "${JWT_KEY_FILE}" > ./server.key
         sfdx force:auth:jwt:grant --clientid ${{ secrets.CONSUMER_KEY }} --jwtkeyfile ./server.key --username ${{ secrets.HUB_USERNAME}} --setdefaultdevhubusername -a devhub
+        sfdx force:org:create -v devhub -s -f config/project-scratch-def.json -a ci_runner -d 1
+        sfdx force:source:push -u ci_runner
+        sfdx force:apex:test:run -l RunLocalTests -w 30
       env:
         JWT_KEY_FILE: ${{ secrets.JWT_KEY_FILE }}
-      
-    - name: Define Scratch org (CI)
-      run: |
-        sfdx force:org:create -v devhub -s -f config/project-scratch-def.json -a ci_runner -d 1
-
-    - name: Deploy source
-      run: |
-        sfdx force:source:push -u ci_runner
-
-    - name: sfdx-test-run
-      run: |
-        sfdx force:apex:test:run -l RunLocalTests -w 30
